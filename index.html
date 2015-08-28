@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Entrecore Hosting Wizard</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="dist/css/bootstrap.css" rel="stylesheet"/>
+        
+        <!-- Boostrap Theme -->
+        <link id="skinCss" href="css/theme-base.css" rel="stylesheet"/>
+        <link href="css/boostrap-overrides.css" rel="stylesheet"/>
+        <link id="themeCss" href="css/theme.css" rel="stylesheet"/>
+        
+        <!-- Add custom CSS here -->
+        <link href="assets/css/sidebar.css" rel="stylesheet"/>
+        
+        <!-- Plugins -->
+        <link href="assets/css/font-awesome.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="assets/css/ezmark.css"/>
+        <link href="assets/plugins/morris.js-0.4.3/morris.css" rel="stylesheet">
+      <link href="assets/css/animate-custom.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/plugins/calendar/zabuto_calendar.css">
+    <link rel="stylesheet" type="text/css" href="assets/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.css">
+        <link href="assets/css/pushy.css" rel="stylesheet"/>
+        <link href="assets/css/panel.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/weather-icons/weather-icons.css">
+        <link href="assets/select/select2.css" rel="stylesheet"/>
+        <link rel="stylesheet" media="screen" type="text/css" href="colorPicker/colpick/css/colpick.css" />
+
+    </head>
+
+<body onload="initPieChart();">
+
+<header>
+  <img src="img/entrecore.png" width="500" height="125" />
+</header>
+
+<div class="main">
+  <div id="process" class="content">
+  <div class="container text-center">   
+      <div class="row">
+        <div class="col-xs-4">
+          <img src="img/site-test.png" width="128" height="128" class="active" />
+        </div>
+         <div class="col-xs-4">
+          <img src="img/revenue.png" width="128" height="128" />
+        </div>
+         <div class="col-xs-4">
+          <img src="img/custom-report.png" width="128" height="128" />
+        </div>
+        <div class="col-sm-8 col-sm-offset-2 line"></div>
+      </div><!-- row -->
+  </div><!-- container -->
+</div><!-- process -->
+
+<div id="test" class="content">
+  <div class="container text-center">
+      <h1 class="heading">How much money is your site loosing?</h1>      
+      <div class="row">
+        <h4>Get your custom revenue health report!</h4><br>
+        <form class="form-inline col-sm-12 clear-fix">
+          <div class="form-group">
+            <label class="sr-only" for="website">Website</label>
+            <input type="text" class="form-control input-lg" id="website" placeholder="Website URL" size="60">
+          </div><button type="submit" class="btn btn-lg btn-info btn-go">Go <i class="icon-ok"></i></button>
+        </form>
+        <br><br>
+        <div class="progress progress-striped active clear-fix col-sm-6 col-sm-offset-3">
+          <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width:55%"></div>
+        </div><!-- progress -->
+      </div><!-- row -->
+  </div><!-- container -->
+</div><!-- test -->
+
+<div id="revenue" class="content">
+  <div class="container text-center">
+      <h1 class="heading">It looks like  you are hosted on <strong>WPEngine</strong></h1>      
+      <div class="row">
+        <h2>Your site load time is:</h2>  
+        <div class="chart">
+          <div class="percentage-light easyPieChart" data-percent="52" style="width: 139.8px; height: 139.8px; line-height: 139.8px;"><span class="text-transparent">5.6 secs</span><canvas width="139.8" height="139.8"></canvas>
+          </div>
+        </div> <br>   
+          <form class="form-inline col-sm-6 col-sm-offset-3 clear-fix">
+            <div class="form-group">
+              <label class="sr-only" for="monthlyrevenue">Amount (in dollars)</label>
+              <div class="input-group">
+                <div class="input-group-addon">$</div>
+                <input type="text" class="form-control input-lg" id="monthlyrevenue" placeholder="Enter your monthly revenue">
+                <div class="input-group-addon">.00</div>
+              </div>
+            </div><br><br>
+              <div class="btn-group">
+                   <button type="button" class="btn btn-success">    
+                      <i class="icon-ok"></i>
+                  </button>
+                   <button type="button" class="btn btn-success btn-icon-trans">
+                      Proceed
+                  </button>
+              </div>
+          </form>
+      </div><!-- row -->
+  </div><!-- container -->
+</div><!-- revenue -->
+
+<div id="custom-report" class="content">
+  <div class="container text-center">
+      <h1 class="heading">We are creating your custom report now</h1>      
+      <div class="row">
+        <div class="progress progress-striped active clear-fix col-sm-6 col-sm-offset-3">
+          <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width:55%"></div>
+        </div><!-- progress -->
+      </div><!-- row -->
+  </div><!-- container -->
+</div><!-- custom-report -->
+
+<div id="send" class="content">
+  <div class="container text-center">
+      <h1 class="heading">Where do we send your custom report?</h1> <br>       
+      <div class="row">
+        <div class="col-sm-4 text-center">
+          <img src="img/report.png" width="256" height="256" />
+        </div>
+        <form class="form-horizontal col-sm-8">
+          <div class="form-group">
+            <label for="inputName3" class="col-sm-2 control-label">Name: </label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control input-lg" id="inputName3" placeholder="Full Name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Email:</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control input-lg" id="inputEmail3" placeholder="example@domain.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-lg btn-info">Send <i class="icon-ok"></i></button>
+            </div>
+          </div>
+        </form>
+      </div><!-- row -->
+  </div><!-- container -->
+</div><!-- send -->
+</div><!-- main -->
+
+<footer>
+  <div class="content container-fluid">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <p>All contents &copy; 2015 <a href="http://entrecore.com">Entrecore LLC</a>. All rights reserved.</p>    
+      </div><!-- col-sm-6 -->
+
+    </div><!-- row -->
+  </div><!-- content container -->
+</footer>
+
+ <!-- JavaScript -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <!-- Theme Core -->
+        <script src="assets/js/jquery.js"></script>
+        <script src="assets/js/chat.js"></script>
+        <script src="assets/js/modernizr-2.6.2.min.js"></script>
+        
+        <script src="dist/js/bootstrap.js"></script>
+        <script type="text/javascript" src="assets/js/jquery-ui-1.10.4.custom.min.js"></script>
+
+        <!-- Pushy JS --> 
+        <script src="assets/js/pushy.js"></script>
+
+    <!-- Zabuto Calendar -->
+    <script src="assets/plugins/calendar/zabuto_calendar.js"></script>
+        <script type="application/javascript">
+                                        $(document).ready(function () {
+                                            $("#date-popover").popover({html: true, trigger: "manual"});
+                                            $("#date-popover").hide();
+                                            $("#date-popover").click(function (e) {
+                                                $(this).hide();
+                                            });
+                                        
+                                            $("#my-calendar").zabuto_calendar({
+                                                action: function () {
+                                                    return myDateFunction(this.id, false);
+                                                },
+                                                action_nav: function () {
+                                                    return myNavFunction(this.id);
+                                                },
+                                                ajax: {
+                                                    url: "show_data.php?action=1",
+                                                    modal: true
+                                                },
+                                                legend: [
+                                                    {type: "text", label: "Special event", badge: "00"},
+                                                    {type: "block", label: "Regular event", }
+                                                ]
+                                            });
+                                        });
+                                        
+                                        function myDateFunction(id, fromModal) {
+                                            $("#date-popover").hide();
+                                            if (fromModal) {
+                                                $("#" + id + "_modal").modal("hide");
+                                            }
+                                            var date = $("#" + id).data("date");
+                                            var hasEvent = $("#" + id).data("hasEvent");
+                                            if (hasEvent && !fromModal) {
+                                                return false;
+                                            }
+                                            $("#date-popover-content").html('You clicked on date ' + date);
+                                            $("#date-popover").show();
+                                            return true;
+                                        }
+                                        
+                                        function myNavFunction(id) {
+                                            $("#date-popover").hide();
+                                            var nav = $("#" + id).data("navigation");
+                                            var to = $("#" + id).data("to");
+                                            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+                                        }
+                                    </script>
+        <!-- Sparkline -->
+    <script src="assets/js/jquery.sparkline.js"></script>
+        
+        <!-- EzMark -->
+        <script src="assets/js/jquery.ezmark.js"></script>
+        <script src="assets/select/select2.js"></script>
+       
+        <script type="text/javascript">
+      $(function() {
+        $('.custom-check input').ezMark()
+      }); 
+    </script>
+        
+        <!-- Canvas.js-->
+        <script src="assets/plugins/canvas/canvasjs.min.js"></script>
+        <!-- ColorPicker -->
+    <script type="text/javascript" src="colorPicker/colpick/js/colpick.js"></script>
+        <script type="text/javascript" src="colorPicker/colpick/js/colpick-implem.js"></script>
+        
+        <!-- Custom -->
+        <script src="assets/js/sidebar-navbar.js"></script>
+        <script src="assets/js/script.js"></script>
+        <script src="assets/js/chart-data.js"></script>
+                
+        <!-- Google Maps -->
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="assets/js/gmap3.js"></script>  
+        <script src="assets/js/gmap.custom-index-map.js"></script>
+        
+        <!-- Font Awesome Markers -->
+    <script src="assets/plugins/fontawesome-markers-master/fontawesome-markers.js"></script>
+        
+        <!-- Easy Pie Charts -->
+    <script type="text/javascript" src="assets/plugins/jquery-easy-pie-chart/examples/excanvas.js"></script>
+        <script type="text/javascript" src="assets/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+     
+        <!-- Initialize Carousel-->
+    <script>$('.carousel').carousel({
+        interval: 7000
+      })
+     </script>
+        <!-- Flot -->
+        <script type="text/javascript" src="assets/plugins/flot/jquery.flot.js"></script>
+        <script type="text/javascript" src="assets/plugins/flot/jquery.flot.resize.js"></script>
+
+    </body>
+</html>
